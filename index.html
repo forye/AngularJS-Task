@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Algomizer page</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+  <script src="contentFunction.js"></script>
+
+</head>
+<body>
+
+<div ng-app="contentFunction" ng-controller="contentController as content">
+    
+    <!-- dummy combobox  -->
+    <select name="ComboBox"  ng-model = "content.comboBox">
+        <option value="first">ComboBox1</option>
+        <option value="seccond">ComboBox2</option>
+        <option value="third">ComboBox3</option>
+    </select>
+    
+    <br>
+    <!-- dummy date  -->
+    <input type="date" ng-model = "content.date"><br>
+    
+    <!-- hidden div-->
+    <div class="hiddenDiv" ng-show="content.show()" >
+        <p>for hiding this div: select all other possible checkboxes, or unselect the "select" checkbox</p> 
+    </div>
+    
+    <!-- checkboxes  -->
+    <input type="checkbox" ng-model = "content.notSelected">not selected<br>
+    <input type="checkbox" ng-model = "content.selected" >selected<br>
+    <input type="checkbox" ng-model = "content.inditerminate">indeterminate<br>
+    
+    <input type="checkbox" disabled="disabled" >disabled<br>
+    <input type="checkbox" disabled="disabled" ng-model = "content.disabledSelected" checked="checked">disabled selected<br>
+    <input type="checkbox" disabled="disabled" >disabled inditerminate
+    <br>
+    <b>a row without a checkbox</b>
+    <br>
+    <br>
+    <button type="button"  ng-click="content.popUp()">Button</button>     
+ </div>
+  
+</body>
+</html>
